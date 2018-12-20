@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import Javascript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!--Import socketio-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+
+    <!--Import materialize.css-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" rel="stylesheet" />
+
+    <!-- CSS and JS files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<!--Background color-->
+<body style="background:url('/static/images/brick-background.jpg')">
+
+<!--Navigation bar-->
+
+<div class="header" id ="myHeader">
+  <a href="#default" class="logo"><img src="/static/Images/Shredder.png" width="48" height="57.6"></a>
+  <div class="header-right">
+    <a href="/login">Member Login</a>
+    <a href="/adminlogin">Admin Login</a>
+
+
+  </div>
+    <div class="header-left">
+    <ul id="mySidenav" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="/static/Images/gymBackground.png">
+      </div>
+      <a href="/adminlogin"><img class="circle" src="/static/Images/ShredderProfile.jpg" width="50" height="74"></a>
+      <a href="#name"><span class="white-text name">Admin</span></a>
+      <a href="#email"><span class="white-text email">admin@getbuff.com</span></a>
+    </div></li>
+      <li><a class="waves-effect" href="/adminlogin">Home</a></li>
+      <li><a class="waves-effect" href="/list">View Clients</a></li>
+      <li><a class="waves-effect" href="/deleteclient">Delete Client</a></li>
+      <li><a class="waves-effect" href="/setstart">Set Starting Weight</a></li>
+      <li><a class="waves-effect" href="/viewchestback">View Chest/Back Day</a></li>
+      <li><a class="waves-effect" href="/viewarms">View Arm Day</a></li>
+      <li><a class="waves-effect" href="/viewcore">View Core Day</a></li>
+      <li><a class="waves-effect" href="/viewleg">View Leg Day</a></li>
+      <li><a class="waves-effect" href="/updatechestback">Update Chest/Back Progress</a></li>
+      <li><a class="waves-effect" href="/updatearms">Update Arm Progress</a></li>
+      <li><a class="waves-effect" href="/updatecore">Update Core Progress</a></li>
+      <li><a class="waves-effect" href="/updateleg">Update Leg Progress</a></li>
+      <li><a class="waves-effect" href="/chat">Chat</a></li>
+  </ul>
+  <a href="#" data-target="mySidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+
+</div>
+
+
+{% block content %}
+    {% if session_user_name %}
+
+     {% endif %}
+{% endblock %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+{%  extends "base.html" %}
+
+{% block content %}
+
+      <table border = 1>
+         <thead>
+            <td>Curl</td>
+            <td>Seated Hammer</td>
+            <td>Lateral Raise</td>
+            <td>Tricep Extension</td>
+            <td>Shoulder Raise</td>
+            <td>Date</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["curl"]}}</td>
+               <td> {{row["seatedHammer"]}}</td>
+               <td>{{row['latRaise']}}</td>
+               <td>{{row["tricepExtension"]}}</td>
+               <td> {{row["shoulderRaise"]}}</td>
+               <td>{{row['insertdate']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/index">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

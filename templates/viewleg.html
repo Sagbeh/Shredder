@@ -1,0 +1,35 @@
+{%  extends "baseAdmin.html" %}
+
+{% block content %}
+
+      <table border = 1>
+         <thead>
+            <td>ClientID</td>
+            <td>Lunges</td>
+            <td>Horizontal Calf</td>
+            <td>MTS Leg Extension</td>
+            <td>Leg Curl</td>
+            <td>Hip Abduction</td>
+            <td>Leg Press</td>
+            <td>Date</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["clientID"]}}</td>
+               <td>{{row["lunges"]}}</td>
+               <td> {{row["horizontalCalf"]}}</td>
+               <td>{{row['mtsLegExtension']}}</td>
+                <td>{{row['legCurl']}}</td>
+               <td>{{row["hipAbduction"]}}</td>
+               <td> {{row["legPress"]}}</td>
+               <td>{{row['insertdate']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/adminindex">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

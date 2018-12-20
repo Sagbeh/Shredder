@@ -1,0 +1,47 @@
+{%  extends "baseAdmin.html" %}
+
+{% block content %}
+   <body>
+
+
+      <h2 style = "text-align: center;">Delete Client</h2>
+
+      <form action = "{{ url_for('deleteclient') }}" method = "POST">
+         <fieldset>
+            <legend>Enter the customer ID to delete the customer</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.cid.label }}{{ form.cid }}
+               <br>
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+      <table border = 1>
+         <thead>
+            <td>ClientID</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>email</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["clientID"]}}</td>
+               <td>{{row["userName"]}}</td>
+               <td> {{row["password"]}}</td>
+               <td>{{row['email']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/adminindex">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+   </body>
+
+{% endblock %}

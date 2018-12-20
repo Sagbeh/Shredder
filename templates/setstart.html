@@ -1,0 +1,64 @@
+{%  extends "baseAdmin.html" %}
+
+{% block content %}
+   <body>
+
+      <h2 style = "text-align: center;">Set Starting Weights for a Client</h2>
+
+      <form action = "{{ url_for('setstart') }}" method = "POST">
+         <fieldset>
+            <legend>Starting Weight Form</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:10px; style = font-weight:bold; style = color:black;>
+               {{ form.cid.label }}{{ form.cid }}
+               <br>
+
+               {{ form.bench.label }}{{ form.bench }} <br>
+               {{ form.seatedDip.label }}{{ form.seatedDip }}
+               <br>
+                {{ form.unilateralRow.label }}{{ form.unilateralRow }} <br>
+               {{ form.frontPulldown.label }}{{ form.frontPulldown }}
+               <br>
+                {{ form.latPulldown.label }}{{ form.latPulldown }} <br>
+                 <br>
+                {{ form.curl.label }}{{ form.curl }} <br>
+                {{ form.seatedHammer.label }}{{ form.seatedHammer }}
+               <br>
+               {{ form.lateralRaise.label }}{{ form.lateralRaise }}
+               <br>
+                  {{ form.tricepExtension.label }}{{ form.tricepExtension }} <br>
+                {{ form.shoulderRaise.label }}{{ form.shoulderRaise }}
+               <br>
+               {{ form.rearFly.label }}{{ form.rearFly }}
+                <br>
+                {{ form.obliqueActivation.label }}{{ form.obliqueActivation }} <br>
+               {{ form.lowerBackActivation.label }}{{ form.lowerBackActivation }}
+               <br>
+                {{ form.abActivation.label }}{{ form.abActivation }} <br>
+                {{ form.medicineBall.label }}{{ form.medicineBall }} <br>
+               {{ form.lowerBackPlank.label }}{{ form.lowerBackPlank }}
+               <br>
+                {{ form.sideSpin.label }}{{ form.sideSpin }} <br>
+                 {{ form.lunges.label }}{{ form.lunges }}
+               <br>
+                {{ form.horizontalCalf.label }}{{ form.horizontalCalf }} <br>
+                {{ form.mtsLegExtension.label }}{{ form.mtsLegExtension }} <br>
+                {{ form.legCurl.label }}{{ form.legCurl }} <br>
+                {{ form.hipAbduction.label }}{{ form.hipAbduction }} <br>
+               {{ form.legPress.label }}{{ form.legPress }}
+               <br>
+
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+</body>
+
+
+
+   <a href = "/login">Go back to home page</a>
+
+{% endblock %}

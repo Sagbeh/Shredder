@@ -1,0 +1,27 @@
+{%  extends "baseAdmin.html" %}
+
+{% block content %}
+
+      <table border = 1>
+         <thead>
+            <td>ClientID</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Email</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["clientID"]}}</td>
+               <td>{{row["userName"]}}</td>
+               <td> {{row["password"]}}</td>
+               <td>{{row['email']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/adminindex">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

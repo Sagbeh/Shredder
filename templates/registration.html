@@ -1,0 +1,34 @@
+{%  extends "base.html" %}
+
+{% block content %}
+   <body>
+
+      <h2 style = "text-align: center;">Registration Form</h2>
+
+      <form action = "{{ url_for('register') }}" method = "POST">
+         <fieldset>
+            <legend>Registration Form</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.user.label }}{{ form.user }}
+               <br>
+
+               {{ form.password.label }}{{ form.password }} <br>
+               {{ form.email.label }}{{ form.email }}
+               <br>
+
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+</body>
+</html>
+
+
+   <a href = "/login">Go back to home page</a>
+
+   </body>
+{% endblock %}

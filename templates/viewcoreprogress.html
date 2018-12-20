@@ -1,0 +1,33 @@
+{%  extends "base.html" %}
+
+{% block content %}
+
+      <table border = 1>
+         <thead>
+            <td>Oblique Activation</td>
+            <td>Lower Back Activation</td>
+            <td>Ab Activation</td>
+            <td>Medicine Ball</td>
+            <td>Lower Back Plank</td>
+            <td>Side Spin</td>
+            <td>Date</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["obliqueActivation"]}}</td>
+               <td>{{row["lowerBackActivation"]}}</td>
+               <td> {{row["abActivation"]}}</td>
+               <td>{{row['medicineBall']}}</td>
+               <td>{{row["lowerBackPlank"]}}</td>
+               <td> {{row["sideSpin"]}}</td>
+               <td>{{row['insertdate']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "index">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

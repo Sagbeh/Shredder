@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import Javascript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!--Import socketio-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+
+    <!--Import materialize.css-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" rel="stylesheet" />
+
+    <!-- CSS and JS files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<!--Background color-->
+<body style="background:url('/static/images/brick-background.jpg')">
+
+<!--Navigation bar-->
+
+<div class="header" id ="myHeader">
+  <a href="/login" class="logo"><img src="/static/Images/Shredder.png" width="48" height="57.6"></a>
+  <div class="header-right">
+    <a href="/registration">Register Here!</a>
+    <a href="/login">Member Login</a>
+    <a href="/adminlogin">Admin Login</a>
+
+
+
+  </div>
+    <div class="header-left">
+    <ul id="mySidenav" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="/static/Images/gym.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="/static/Images/foot.jpg"></a>
+      <a href="#name"><span class="white-text name"></span></a>
+      <a href="#email"><span class="white-text email"></span></a>
+    </div></li>
+      <li><a class="waves-effect" href="/login">Home</a></li>
+      <li><a class="waves-effect" href="/viewchestbackprogress">View Chest/Back Day Progress</a></li>
+      <li><a class="waves-effect" href="/viewarmsprogress">View Arm Day Progress</a></li>
+      <li><a class="waves-effect" href="/viewcoreprogress">View Core Day Progress</a></li>
+      <li><a class="waves-effect" href="/viewlegprogress">View Leg Day Progress</a></li>
+      <li><a class="waves-effect" href="/resources">Resources</a></li>
+      <li><a class="waves-effect" href="/chat">Chat</a></li>
+  </ul>
+  <a href="#" data-target="mySidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+
+</div>
+
+
+{% block content %}
+    {% if session_user_name %}
+
+     {% endif %}
+{% endblock %}
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

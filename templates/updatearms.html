@@ -1,0 +1,27 @@
+{%  extends "baseAdmin.html" %}
+
+{% block content %}
+   <body>
+
+
+      <h2 style = "text-align: center;">Update Progress</h2>
+
+      <form action = "{{ url_for('updatearms')}}" method = "POST">
+         <fieldset>
+            <legend>Enter the clientID of client you want to update</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.cid.label }}{{ form.cid}} <br>
+                {{ form.pVal.label }}{{ form.pVal}} <br>
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+      <a href = "/adminindex">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+   </body>
+{% endblock %}

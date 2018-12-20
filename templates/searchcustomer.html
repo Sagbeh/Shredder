@@ -1,0 +1,21 @@
+<html>
+   <body>
+
+      <h2 style = "text-align: center;">Search Client by CID</h2>
+
+      <form action = "{{ url_for('searchcustomer') }}" method = "POST">
+         <fieldset>
+            <legend>Search Form</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.cid.label }}{{ form.cid }}
+               <br>
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+</body>
+</html>

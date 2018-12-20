@@ -1,0 +1,33 @@
+{%  extends "base.html" %}
+
+{% block content %}
+
+      <table border = 1>
+         <thead>
+            <td>Bench</td>
+            <td>Seated Dip</td>
+            <td>Unilateral Row</td>
+            <td>Front Pulldown</td>
+            <td>Lat Pulldown</td>
+            <td>Rear Fly</td>
+            <td>Date</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["bench"]}}</td>
+               <td> {{row["seatedDip"]}}</td>
+               <td>{{row['unilateralRow']}}</td>
+               <td>{{row["frontPulldown"]}}</td>
+               <td> {{row["latPulldown"]}}</td>
+                <td>{{row['rearFly']}}</td>
+               <td>{{row['insertdate']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/index">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}
